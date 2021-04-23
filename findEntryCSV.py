@@ -9,6 +9,6 @@ with open('hrdata_modified.csv', newline='') as csv_file:
 employee = input("Enter employee name: ")
 
 if (employee in [j for i in data for j in i]) == True:
-    print("Employee found")
+    print("Employee found!")
 else:
     print("Employee not found!")
