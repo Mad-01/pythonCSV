@@ -14,24 +14,24 @@ def find_index(input):
             return index
         else : index+=1
 val = find_index(user_input)
-print (vak)
+print (val)
 if val is None:
     print('Employee record not found!')
 else:
     print('Employee record found.')
     newID = input('Enter new ID# (XX-XXX-XXX): ')
 
-    reader = csv.reafer(open('hrdata_modified.csv'))
+    reader = csv.reader(open('hrdata_modified.csv'))
     lines = list(reader)
 
 
     lines[val][4] = newID
-    w = open('output.csv', 'w', newline=' ')
+    w = open('output.csv', 'w', newline='')
     writer = csv.writer(w)
-    writer.writerrows(lines)
+    writer.writerows(lines)
     w.close()
 
-    df = pandas.read.scv('output.csv', 
+    df = pandas.read_csv('output.csv', 
         index_col = 'Employee', 
         parse_dates = ['Hired'], 
         header=0, 
